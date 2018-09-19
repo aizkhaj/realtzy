@@ -11,9 +11,7 @@ const app = express();
 require('dotenv').config();
 
 // connect to mongodb here
-mongoose.connect(process.env.MONGODB_URI, {
-  useMongoClient: true
-});
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
 mongoose.Promise = global.Promise;
 mongoose.connection.on('error', (err) => {
   console.error(err.message);
