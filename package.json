@@ -1,0 +1,36 @@
+{
+  "name": "realtzy-api",
+  "version": "1.0.0",
+  "description": "A basic realtor app (for demonstration purposes only).",
+  "main": "index.js",
+  "engines": {
+    "node": "8.1.1",
+    "npm": "5.0.3"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aizkhaj/realtzy-api.git"
+  },
+  "author": "Aizaz Khaja <aizazkj@gmail.com> (http://aizaz.tech/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aizkhaj/realtzy-api/issues"
+  },
+  "homepage": "https://github.com/aizkhaj/realtzy-api#readme",
+  "dependencies": {
+    "axios": "0.18.0",
+    "bcryptjs": "2.4.3",
+    "body-parser": "1.18.3",
+    "cors": "2.8.4",
+    "dotenv": "6.0.0",
+    "express": "4.16.3",
+    "mongoose": "5.2.15",
+    "passport": "0.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "1.18.4"
+  }
+}
