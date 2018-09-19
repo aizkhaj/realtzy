@@ -1,5 +1,13 @@
 const express = require('express');
 const router = express.Router();
+const usersController = require('./controllers/usersController');
+
+
+// GET "*" for wildcard and undefined routes. Should show error page.
+router.route('*')
+  .get((req, res) => {
+    res.status(404).json({message: "You seem to be lost in the Bermuda Triangle..."});
+  });
 
 // GET /
 // show homepage
@@ -8,12 +16,18 @@ router.route('/')
     res.json("Welcome to the API for Realtzy app.");
   });
 
-// GET /user/signup
 // POST /user/signup
 // allow a user to sign up to the platform.
+router.route('/signup')
+  .post(usersController.signup);
+
 
 // GET /user/login
+
 // POST /user/login
+router.route('/login')
+  .post(usersController.login);
+
 // GET /user/logout
 // allow a user to sign in and out of the platform.
 

@@ -22,7 +22,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // import models here
-
+const User = require('./models/User');
 
 // mount route file
 app.use('/api', routes);
