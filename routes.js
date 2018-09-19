@@ -6,7 +6,7 @@ const usersController = require('./controllers/usersController');
 // GET "*" for wildcard and undefined routes. Should show error page.
 router.route('*')
   .get((req, res) => {
-    res.status(404).json({message: "You seem to be lost in the Bermuda Triangle..."});
+    res.status(404).json({message: "Not Found. You seem to be lost in the Bermuda Triangle."});
   });
 
 // GET /
