@@ -1,13 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const usersController = require('./controllers/usersController');
-
-
-// GET "*" for wildcard and undefined routes. Should show error page.
-router.route('*')
-  .get((req, res) => {
-    res.status(404).json({message: "Not Found. You seem to be lost in the Bermuda Triangle."});
-  });
+const auth = require('./auth')();
 
 // GET /
 // show homepage
@@ -20,9 +14,6 @@ router.route('/')
 // allow a user to sign up to the platform.
 router.route('/signup')
   .post(usersController.signup);
-
-
-// GET /user/login
 
 // POST /user/login
 router.route('/login')

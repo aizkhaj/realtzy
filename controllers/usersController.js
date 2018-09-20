@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 mongoose.set('useCreateIndex', true);
 const User = require('../models/User').model;
 const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
+const jwt = require('jwt-simple');
+require('dotenv').config();
 
 exports.signup = (req, res) => {
   let newUser;
@@ -49,7 +50,7 @@ exports.login = (req, res) => {
       }
 
       const payload = {id: user.id};
-      const token = jwt.sign(payload, process.env.SECRET);
+      const token = jwt.encode(payload, process.env.SECRET);
 
       return res.status(200).json({
         message: "User logged in successfully",
@@ -67,4 +68,5 @@ exports.login = (req, res) => {
       message: "User not found", 
     });
   });
-}
+};
+    
