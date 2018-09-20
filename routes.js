@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const usersController = require('./controllers/usersController');
 const clientsController = require('./controllers/clientsController');
+const listingsController = require('./controllers/listingsController');
 const auth = require('./auth')();
 
 // GET /
@@ -22,8 +23,8 @@ router.route('/login')
 
 // GET /listings
 // show all real estate listings in a table
-// router.route('/listings')
-//   .get(auth.authenticate(), listingsController.allListings);
+router.route('/listings')
+  .get(auth.authenticate(), listingsController.allListings);
 
 // GET /crm
 // show all client info in a table
