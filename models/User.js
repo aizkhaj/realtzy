@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const Client = require('./Client').schema;
 
 const userSchema = new Schema({
   username: {
@@ -11,7 +12,9 @@ const userSchema = new Schema({
   password: {
     type: String,
     required: true
-  }
+  },
+  clients: [Client]
+  // each User has a list of clients.
 });
 
 const User = mongoose.model('User', userSchema);
